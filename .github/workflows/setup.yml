@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: install
-        run: cd lede && ./scripts/feeds update -a && ./scripts/feeds install -a
+        run: ./scripts/feeds update -a && ./scripts/feeds install -a
         
       - name: make download
         run: make -j8 download V=s
