@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: SetUp
 
 # Controls when the action will run. 
 on:
@@ -90,7 +90,7 @@ jobs:
       - name: Upload release asset
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.SUPERSECRET }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
