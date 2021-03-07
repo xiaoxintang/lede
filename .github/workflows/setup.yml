@@ -42,6 +42,11 @@ jobs:
           
       - name: Generate configuration file
         run: make defconfig
+        
+      - name: Custom configuration
+        run: |
+          sed -i 's/# CONFIG_TARGET_ROOTFS_TARGZ is not set/CONFIG_TARGET_ROOTFS_TARGZ=y/' .config
+          sed -i 's/# CONFIG_PACKAGE_ipv6helper is not set/CONFIG_PACKAGE_ipv6helper=y/' .config
 
       - name: Make download
         run: |
